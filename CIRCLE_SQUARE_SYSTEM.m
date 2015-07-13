@@ -1,4 +1,4 @@
-function [u1,p,t] = CIRCLE_SQUARE_SYSTEM2(tspan,gd,sf,ns)
+function [u1,p,t] = CIRCLE_SQUARE_SYSTEM(tspan,gd,sf,ns)
 %CIRCLE_SQUARE_SYSTEM2 - Using a finite element method to evaluate the diffusion of
 %matter out of/into a circular material (PLGA) into/out of a square (water).
 tic
