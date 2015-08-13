@@ -35,6 +35,7 @@ uout1 = evaluate(F1,X,Y);
 uout2 = evaluate(F2,X,Y);
 uout3 = evaluate(F3,X,Y);
 
+
 % colormap(cool);
 for i = 1:length(tspan)
     fig = figure(2);
@@ -43,7 +44,7 @@ for i = 1:length(tspan)
     % fig.Position = [0.3 0.3 0.7 0.7];
     fig.Color = [1 1 1];
     colormap(cool);
-%     subplot(2,2,1)
+    subplot(2,2,1)
     Z1 = reshape(uout1(:,i),size(X));
     surf(xgrid,ygrid,Z1);
     axis([-0.5 0.5 -0.5 0.5 -0.01 1.01]);
@@ -52,13 +53,13 @@ for i = 1:length(tspan)
     shading interp;
 
     
-    fig3 = figure(3);
-    u = fig3.Units;
-    fig3.Units = 'normalized';
-    % fig3.Position = [0.3 0.3 0.7 0.7];
-    fig3.Color = [1 1 1];
-    colormap(cool);
-%     subplot(2,2,2)
+%     fig3 = figure(3);
+%     u = fig3.Units;
+%     fig3.Units = 'normalized';
+%     % fig3.Position = [0.3 0.3 0.7 0.7];
+%     fig3.Color = [1 1 1];
+%     colormap(cool);
+    subplot(2,2,2)
 umax = max(max(u12));
 umin = min(min(u12));
     Z2 = reshape(uout2(:,i),size(X));
@@ -69,18 +70,18 @@ umin = min(min(u12));
     shading interp;
     
     
-    fig4 = figure(4);
-    u = fig4.Units;
-    fig4.Units = 'normalized';
-    % fig4.Position = [0.3 0.3 0.7 0.7];
-    fig4.Color = [1 1 1];
-    colormap(cool);
-%     subplot(2,2,3)
+%     fig4 = figure(4);
+%     u = fig4.Units;
+%     fig4.Units = 'normalized';
+%     % fig4.Position = [0.3 0.3 0.7 0.7];
+%     fig4.Color = [1 1 1];
+%     colormap(cool);
+    subplot(2,2,3)
 umax = max(max(u13));
 umin = min(min(u13));
     Z3 = reshape(uout3(:,i),size(X));
     surf(xgrid,ygrid,Z3);
-    axis([-0.5 0.5 -0.5 0.5 -0.001 0.051]);
+    axis([-0.5 0.5 -0.5 0.5 -0.001 1]);
     title('pH');
     zlabel('Concentration');
     shading interp;
